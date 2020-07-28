@@ -19,6 +19,7 @@ jobs:
         java-version: 1.8
     # Setup the flutter environment.
     - uses: subosito/flutter-action@v1
+    - run: ls 
     - run: cp "coin_app.iml" "coin_app.iml" 
     - run: flutter pub get
     - run: flutter build apk
