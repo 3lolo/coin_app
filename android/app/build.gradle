@@ -55,8 +55,15 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
+
+            firebaseAppDistribution {
+                testers = "pozniack@gmail.com"
+                apkPath = './build/app/outputs/apk/release/app-release.apk'
+            }
         }
     }
+
+
 }
 
 flutter {
@@ -67,6 +74,5 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'com.google.firebase:firebase-firestore-ktx:21.5.0'
-
 
 }
