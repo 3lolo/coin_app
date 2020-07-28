@@ -25,6 +25,6 @@ jobs:
 #     - run: flutter test
     - run: flutter build apk
       
-#     - name: Build with Gradle
-#       working-directory: ./android
-#       run: bash ./gradlew build
+    - name: Deploy to Firebase
+      working-directory: ./android
+      run: bash ./gradlew appDistributionUploadRelease
