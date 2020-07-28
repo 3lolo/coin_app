@@ -17,6 +17,14 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Build with Gradle
-      working-directory: ./android
-      run: bash ./gradlew build
+    # Setup the flutter environment.
+    - uses: subosito/flutter-action@v1
+      
+    - run: flutter pub get
+    - run: flutter analyze 
+    - run: flutter test
+    - run: flutter build apk
+      
+#     - name: Build with Gradle
+#       working-directory: ./android
+#       run: bash ./gradlew build
