@@ -26,5 +26,4 @@ jobs:
     - run: flutter build apk
       
     - name: Deploy to Firebase
-      working-directory: ./android
-      run: bash ./gradlew appDistributionUploadRelease
+      run: bash ./android/gradlew appDistributionUploadRelease
