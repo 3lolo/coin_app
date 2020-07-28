@@ -19,7 +19,7 @@ jobs:
         java-version: 1.8
     - name: Build with Gradle
       run: ./gradlew build
-    - name: Deploy to Firebase 
-      env:  
-        super_secret: ${{ secrets.FIREBASE_TOKEN }}
-      run: ./gradlew assembleRelease appDistributionUploadRelease 
+#     - name: Deploy to Firebase 
+#       env:  
+#         super_secret: ${{ secrets.FIREBASE_TOKEN }}
+#       run: ./gradlew assembleRelease appDistributionUploadRelease 
