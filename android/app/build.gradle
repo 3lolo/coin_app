@@ -57,8 +57,9 @@ android {
             signingConfig signingConfigs.debug
 
             firebaseAppDistribution {
+                releaseNotes="Release notes for full version"
                 testers = "pozniack@gmail.com"
-                apkPath = '../app/outputs/apk/release/app-release.apk'
+//                apkPath = '../app/outputs/apk/release/app-release.apk'
             }
         }
     }

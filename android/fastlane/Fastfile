@@ -1,0 +1,69 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+# default_platform(:android)
+
+platform :android do
+  desc "My awesome app"
+  lane :android_beta_app do
+      # build_android_app(...) # build_android_app is a built-in fastlane action.
+
+      firebase_app_distribution(
+          app: "1:123456789:android:abcd1234",
+          testers: "tester1@company.com, tester2@company.com",
+          release_notes: "Lots of amazing new features to test out!",
+          firebase_cli_path: "/absolute/path/to/firebase/cli/binary"
+      )
+
+  end
+end
+
+
+
+# platform :android do
+#   desc "Runs all the tests"
+#   lane :test do
+#     gradle(task: "test")
+#   end
+
+#   desc "Submit a new Beta Build to Crashlytics Beta"
+#   lane :beta do
+#     gradle(task: "clean assembleRelease")
+#     crashlytics
+  
+#     # sh "your_script.sh"
+#     # You can also use other beta testing services here
+#   end
+
+#   desc "Deploy a new version to the Google Play"
+#   lane :deploy do
+#     gradle(task: "clean assembleRelease")
+#     upload_to_play_store
+#   end
+  
+#  #Step 1 — Build your app, my suggestion is gym
+#  #Step 2 — Upload to firebase app distribution
+#   lane :upload_to_firebase do
+#     # gradle(task: "clean assembleRelease")
+
+#     firebase_app_distribution(
+#       app: "1:810382586669:android:59bacbe2a7e323d13b59a4",
+#       testers: "pozniack@gmail.com",
+#       release_notes: "RELEASE-NOTE",
+#       firebase_cli_path: "/absolute/path/to/firebase/cli/binary",
+#       apk_path: "../build/app/outputs/apk/release/app-release.apk"
+#     )
+#   end
+# end
